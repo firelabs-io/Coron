@@ -9,7 +9,6 @@ so for this exaple, 4 chunks, 2 bit pointer or smt, and each chunk is 32 bits
 so in total we should have 128 bits, and yeah it works
 
 # next
-- next
 - [ ] put in binary (not normal text, it will be like ascii or smt)
 - [ ] allow chunks data may point to toher chunks
 - [ ] add first part of data just for the pointers
