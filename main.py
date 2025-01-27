@@ -1,13 +1,13 @@
 import sys
 
 class coron:
-    def __init__(self, chunksize=32, pointer=2):
-        self.data = [0 for i in range(0, 2**7)]
+    def __init__(self, chunksize=64, pointer=4):
+        self.data = [0 for i in range(0, 2**14)]
         self.pointarr = [0 for i in range(pointer**2)]
         self.chunks = chunksize # each chunk size, in total of 4
         self.pointers = pointer # pointer size, we need 2 cuz 2^2 = 4
     def set(self, pointer, data):
-        if pointer > 0 and pointer < 2**2:
+        if pointer > 0 and pointer < 2**4:
             j = 0
             for i in range(pointer*self.chunks, pointer*self.chunks + len(data)):
                 self.data[i] = data[j]
@@ -37,9 +37,10 @@ class coron:
 if __name__ == '__main__':
     c = coron()
     _ = []
-    for i in "hello!":
+    for i in "Obj John 1100":
         _.append(ord(i))
     c.set(2, _)
+    c.set(15, [76])
     c.testchunk(2)
     print(c.pointarr)
     with open(sys.argv[1], 'wb') as file:
