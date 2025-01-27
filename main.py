@@ -14,7 +14,7 @@ class coron:
                 j += 1
             self.pointarr[pointer-1] = 1
     def get(self, pointer):
-        if pointer > 0 and pointer < 2**2:
+        if pointer > 0 and pointer < 2**4:
             data = []
             i = pointer*self.chunks
             while self.data[i] != 0:
